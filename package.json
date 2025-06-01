@@ -2,7 +2,6 @@
   "name": "todo-second",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vlexsis.github.io/todo-app",
   "dependencies": {
     "cra-template": "1.2.0",
     "date-fns": "^4.1.0",
