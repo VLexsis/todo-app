@@ -1,0 +1,36 @@
+.filterList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  &Item {
+    display: inline-block;
+  }
+
+  &Button {
+    padding: 3px 7px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background: none;
+    color: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: rgba(175, 47, 47, 0.1);
+    }
+
+    &.selected {
+      border-color: rgba(175, 47, 47, 0.2);
+      cursor: default;
+
+      &:hover {
+        border-color: rgba(175, 47, 47, 0.2);
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+
+.todoapp {
+  --shadow-default: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  --shadow-large: 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+  --placeholder-color: rgba(0, 0, 0, 0.4);
+
+  background: #fff;
+  margin: 130px 0 40px 0;
+  position: relative;
+  box-shadow: var(--shadow-default), var(--shadow-large);
+
+  .header {
+    h1 {
+      position: absolute;
+      top: -140px;
+      width: 100%;
+      font-size: 80px;
+      font-weight: 200;
+      text-align: center;
+      color: rgba(175, 47, 47, 0.15);
+      text-rendering: optimizeLegibility;
+    }
+  }
+
+  .main {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #e6e6e6;
+  }
+
+  @mixin placeholder {
+    &::-webkit-input-placeholder {
+      @content;
+    }
+    &::-moz-placeholder {
+      @content;
+    }
+    &:-ms-input-placeholder {
+      @content;
+    }
+    &::placeholder {
+      @content;
+    }
+  }
+
+  input {
+    @include placeholder {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--placeholder-color);
+    }
+  }
+}

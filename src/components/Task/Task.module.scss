@@ -1,0 +1,93 @@
+.taskItem {
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #ededed;
+  list-style: none;
+  background: white;
+  transition: all 0.3s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &.completed {
+    .taskTitle {
+      color: #cdcdcd;
+      text-decoration: line-through;
+    }
+  }
+
+  .view {
+    display: flex;
+    align-items: center;
+    padding: 15px 15px 15px 60px;
+    position: relative;
+  }
+
+  .toggle {
+    position: absolute;
+    left: -9999px;
+
+    & + label {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center center;
+      cursor: pointer;
+    }
+
+    // Состояние checked
+    &:checked + label {
+      background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E");
+    }
+  }
+
+  .taskTitle {
+    flex-grow: 1;
+    word-break: break-word;
+    padding-right: 50px;
+    line-height: 1.2;
+    transition: color 0.4s;
+    font-weight: 400;
+    color: #4d4d4d;
+  }
+
+  .taskDescription {
+    position: absolute;
+    right: 50px;
+    bottom: 10px;
+    font-size: 13px;
+    color: gray;
+  }
+
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+    color: #cc9a9a;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #af5b5e;
+    }
+
+    &::after {
+      content: "×";
+      display: block;
+      line-height: 30px;
+      text-align: center;
+    }
+  }
+}
